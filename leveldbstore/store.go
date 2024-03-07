@@ -1,7 +1,7 @@
 package leveldbstore
 
 import (
-	"github.com/sunvim/go-tus"
+	"github.com/sunvim/tus"
 	"github.com/syndtr/goleveldb/leveldb"
 )
 

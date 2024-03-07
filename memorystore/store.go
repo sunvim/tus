@@ -1,7 +1,7 @@
 package memorystore
 
 import (
-	"github.com/sunvim/go-tus"
+	"github.com/sunvim/tus"
 )
 
 // MemoryStore implements an in-memory Store.

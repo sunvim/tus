@@ -1,4 +1,4 @@
-module github.com/sunvim/go-tus
+module github.com/sunvim/tus
 
 go 1.22.0
 
