@@ -104,7 +104,7 @@ func (s *UploadTestSuite) TestSmallUploadFromFile() {
 	client, err := NewClient(s.url, nil)
 	s.Nil(err)
 
-	upload, err := NewUploadFromFile(f)
+	upload, err := NewUploadFromFile(f, make(map[string]string))
 	s.Nil(err)
 
 	uploader, err := client.CreateUpload(upload)
@@ -141,7 +141,7 @@ func (s *UploadTestSuite) TestLargeUpload() {
 	client, err := NewClient(s.url, nil)
 	s.Nil(err)
 
-	upload, err := NewUploadFromFile(f)
+	upload, err := NewUploadFromFile(f, make(map[string]string))
 	s.Nil(err)
 
 	uploader, err := client.CreateUpload(upload)
@@ -242,7 +242,7 @@ func (s *UploadTestSuite) TestConcurrentUploads() {
 			err = f.Truncate(1048576 * 5) // 5 MB
 			s.Nil(err)
 
-			upload, err := NewUploadFromFile(f)
+			upload, err := NewUploadFromFile(f, make(map[string]string))
 			s.Nil(err)
 
 			uploader, err := client.CreateUpload(upload)
@@ -293,7 +293,7 @@ func (s *UploadTestSuite) TestResumeUpload() {
 	client, err := NewClient(s.url, cfg)
 	s.Nil(err)
 
-	upload, err := NewUploadFromFile(f)
+	upload, err := NewUploadFromFile(f, make(map[string]string))
 	s.Nil(err)
 
 	uploader, err := client.CreateUpload(upload)

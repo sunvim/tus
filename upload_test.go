@@ -25,7 +25,7 @@ func TestNewUploadFromFile(t *testing.T) {
 	err = f.Truncate(1048576) // 1 MB
 	assert.Nil(t, err)
 
-	u, err := NewUploadFromFile(f)
+	u, err := NewUploadFromFile(f, make(map[string]string))
 	assert.Nil(t, err)
 	assert.NotNil(t, u)
 	assert.EqualValues(t, 1048576, u.Size())
